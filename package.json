@@ -2,7 +2,7 @@
   "name": "find_end_gate",
   "version": "0.0.1",
   "private": true,
-  "description": "Script to calculate the location of the end gate in minecraft.",
+  "description": "Coding Kata to find the location of the end gate in minecraft.",
   "main": "index.js",
   "scripts": {
     "calc": "NODE_PATH=. node index.js"
