@@ -1,0 +1,12 @@
+{
+  "name": "find_end_gate",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Script to calculate the location of the end gate in minecraft.",
+  "main": "index.js",
+  "scripts": {
+    "calc": "NODE_PATH=. node index.js"
+  },
+  "author": "Joshua Stoutenburg <jehoshua02@gmail.com>",
+  "license": "MIT"
+}
