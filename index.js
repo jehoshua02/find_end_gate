@@ -15,6 +15,17 @@ var lines = {
 
 console.log({
   points: JSON.stringify(points),
-  lines: JSON.stringify(lines),
-  intersect: JSON.stringify(lines.ab.intersect(lines.cd))
+  lines: JSON.stringify(lines)
 });
+
+var intersect = lines.ab.intersect(lines.cd);
+console.log('\nend gate: ' + intersect.toString(0) );
+
+var distance = points.a.distance(intersect);
+console.log('\ndistance from point a: ' + Math.round(distance));
+
+var netherPortal = new Point(intersect.x / 3, intersect.y / 3);
+console.log('\nnether portal: ' + netherPortal.toString(0));
+
+var netherDistance = distance / 3;
+console.log('\ndistance in nether: ' + Math.round(netherDistance));

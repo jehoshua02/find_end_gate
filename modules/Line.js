@@ -17,8 +17,8 @@ Line.prototype.slope = function () {
   return (this.point1.y - this.point2.y) / (this.point1.x - this.point2.x);
 };
 
-Line.prototype.intersect = function (line) {
-  var x = (this.yIntercept() - line.yIntercept()) / (this.slope() + line.slope());
+Line.prototype.intersect = function (that) {
+  var x = (this.yIntercept() - that.yIntercept()) / (this.slope() - that.slope());
   var y = this.getY(x);
   return new Point(x, y);
 };
