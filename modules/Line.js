@@ -5,7 +5,7 @@ var Line = function (point1, point2) {
   this.point2 = point2;
 };
 
-Line.prototype.getY = function (x) {
+Line.prototype.y = function (x) {
   return this.slope() * x + this.yIntercept();
 };
 
@@ -19,7 +19,7 @@ Line.prototype.slope = function () {
 
 Line.prototype.intersect = function (that) {
   var x = (this.yIntercept() - that.yIntercept()) / (this.slope() - that.slope());
-  var y = this.getY(x);
+  var y = this.y(x);
   return new Point(x, y);
 };
 
