@@ -18,9 +18,18 @@ Line.prototype.slope = function () {
 };
 
 Line.prototype.intersect = function (that) {
-  var x = (this.yIntercept() - that.yIntercept()) / (this.slope() - that.slope());
+  // mx + b = nx + c
+  // mx = nx + c - b
+  // mx - nx = c - b
+  // (m - n)x = c - b
+  // x = (c - b) / (m - n)
+  var x = (that.yIntercept() - this.yIntercept()) / (this.slope() - that.slope());
   var y = this.y(x);
   return new Point(x, y);
+};
+
+Line.prototype.toString = function () {
+  return "y = " + this.slope() + "x + " + this.yIntercept();
 };
 
 module.exports = Line;

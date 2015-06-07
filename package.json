@@ -5,8 +5,15 @@
   "description": "Coding Kata to find the location of the end gate in minecraft.",
   "main": "index.js",
   "scripts": {
+    "test": "NODE_PATH=. mocha",
     "calc": "NODE_PATH=. node index.js"
   },
   "author": "Joshua Stoutenburg <jehoshua02@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "expect": "^1.6.0",
+    "istanbul": "^0.3.14",
+    "mocha": "^2.2.5",
+    "mocha-istanbul": "^0.2.0"
+  }
 }

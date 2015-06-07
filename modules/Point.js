@@ -19,7 +19,7 @@ Point.prototype.toString = function (round) {
 
   if (round !== undefined) {
     array = array.map(function (item) {
-      return Math.round(item, round);
+      return item.toFixed(round) * 1;
     });
   }
 

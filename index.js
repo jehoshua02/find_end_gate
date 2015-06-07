@@ -5,12 +5,18 @@ var points = {
   a: new Point(-340, 265),
   b: new Point(-329, 256),
   c: new Point(-326, 277),
-  d: new Point(-311, 264)
+  d: new Point(-311, 264),
+  e: new Point(-84, 204),
+  f: new Point(-77, 189),
+  g: new Point(94, 149),
+  h: new Point(85, 124)
 };
 
 var lines = {
   ab: new Line(points.a, points.b),
-  cd: new Line(points.c, points.d)
+  cd: new Line(points.c, points.d),
+  ef: new Line(points.e, points.f),
+  gh: new Line(points.g, points.h)
 };
 
 console.log({
@@ -18,14 +24,14 @@ console.log({
   lines: JSON.stringify(lines)
 });
 
-var intersect = lines.ab.intersect(lines.cd);
-console.log('\nend gate: ' + intersect.toString(0) );
-
-var distance = points.a.distance(intersect);
-console.log('\ndistance from point a: ' + Math.round(distance));
-
-var netherPortal = new Point(intersect.x / 3, intersect.y / 3);
-console.log('\nnether portal: ' + netherPortal.toString(0));
-
-var netherDistance = distance / 3;
-console.log('\ndistance in nether: ' + Math.round(netherDistance));
+var seen = [];
+for (var name1 in lines) {
+  seen.push(name1);
+  for (var name2 in lines) {
+    if (seen.indexOf(name2) !== -1) { continue; }
+    var intersect = lines[name1].intersect(lines[name2]);
+    console.log([
+      '\nintersect ', name1, ' and ', name2, ': ', intersect.toString(0)
+    ].join(''));
+  }
+}
