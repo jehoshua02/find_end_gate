@@ -2,21 +2,15 @@ var Point = require('modules/Point');
 var Line = require('modules/Line');
 
 var points = {
-  a: new Point(-340, 265),
-  b: new Point(-329, 256),
-  c: new Point(-326, 277),
-  d: new Point(-311, 264),
-  e: new Point(-84, 204),
-  f: new Point(-77, 189),
-  g: new Point(94, 149),
-  h: new Point(85, 124)
+  a: new Point(-269, 702),
+  b: new Point(-244, 719),
+  c: new Point(-271, 761),
+  d: new Point(-234, 782),
 };
 
 var lines = {
   ab: new Line(points.a, points.b),
   cd: new Line(points.c, points.d),
-  ef: new Line(points.e, points.f),
-  gh: new Line(points.g, points.h)
 };
 
 console.log({
